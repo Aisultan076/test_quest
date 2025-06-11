@@ -5,10 +5,16 @@ USERS = {
     "user": "password"
 }
 
+
 class LoginData(BaseModel):
     username: str
     password: str
 
-class Token(BaseModel):
+
+class TokenPair(BaseModel):
     access_token: str
-    token_type: str
+    refresh_token: str
+
+
+class RefreshRequest(BaseModel):
+    refresh_token: str
